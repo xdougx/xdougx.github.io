@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby Everyday</title>
+    <description>Playing with ruby everyday, learning about ruby, rails, rspec, js, css, tdd, bdd. Getting connected with whats happening on ruby and rails comunity.</description>
+    <link>http://www.ruby-everyday.ninja/</link>
+    <atom:link href="http://www.ruby-everyday.ninja/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Lets talk about Ruby</title>
+        <description>&lt;p&gt;For our first publication we will talk about ruby, there so many people starting with ruby these days, the community is growing up &lt;strong&gt;everyday&lt;/strong&gt;, here in Brazil (where i live), i’ve seen the number of companies using ruby growing with the demand of ruby developers.&lt;/p&gt;
+
+&lt;p&gt;So we’ll try to help the people who wants to learn about ruby and your gems.&lt;/p&gt;
+
+&lt;p&gt;Lets get our hello world from ruby here today.&lt;/p&gt;
+
+&lt;p&gt;For the first, I really loves &lt;a href=&quot;http://rvm.io/&quot;&gt;RVM&lt;/a&gt; (Ruby Version Manager), many developers will say &lt;a href=&quot;https://github.com/sstephenson/rbenv&quot;&gt;rbenv&lt;/a&gt; is better, but here you will use RVM, but you are free to use others managers if you want, or if you would like to use the ruby without any manager, it’s fine too.&lt;/p&gt;
+
+&lt;p&gt;Lets install RVM&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;url -sSL https://get.rvm.io &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; bash -s stable&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note: if you are using mac you will perhaps need to install wget and brew, 
+&lt;code&gt;ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;&lt;/code&gt;,
+also if you are using ubuntu you can use &lt;code&gt;sudo apt-get install wget&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then we can install our requirements using the command&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rvm requirements&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note: try to run &lt;code&gt;rvm -h&lt;/code&gt; to get help about the functions of RVM, one thing to do after instalations is run
+&lt;code&gt;rvm requirements&lt;/code&gt; to installs additional OS specific dependencies/requirements for building various rubies. Usually run by install.&lt;/p&gt;
+
+&lt;p&gt;Now we’ll install the last version of ruby&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rvm install 2.1.0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Tip: if you want to know what are the available versions use the command &lt;code&gt;rvm list known&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Okay! Lets go to Hello World
+Our first class on Ruby, lets create our file using vi/vim&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;vim hello.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# hello.rb&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Hello&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialiser&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;This is our class Hello&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;say_hello_to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;person&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we need to use our first class &lt;code&gt;vim test.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# test.rb&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;say_hello_to&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Douglas&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now just run our &lt;code&gt;test.rb&lt;/code&gt; file just like this &lt;code&gt;$ ruby test.rb&lt;/code&gt;
+The result is &lt;code&gt;Hello Douglas&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope you enjoy this introduction to the ruby!&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 29 May 2014 21:30:22 -0300</pubDate>
+        <link>http://www.ruby-everyday.ninja/ruby/2014/05/29/lets-talk-about-ruby/</link>
+        <guid isPermaLink="true">http://www.ruby-everyday.ninja/ruby/2014/05/29/lets-talk-about-ruby/</guid>
+      </item>
+    
+  </channel>
+</rss>
