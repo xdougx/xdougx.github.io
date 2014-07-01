@@ -12,7 +12,7 @@ So, what do I saw when open the code? Surprise! Awkward code!
 
 Ruby is a full OOP language, playing with Rails, you can get awesowe ways to build a clean code. But not this time, when i open that code, with full functional programing in the middle of all rails controllers, i've become so sad :(
 
-===The excuses
+===The excuses===
 "I just have 2 week to build the code"
 
 I dont think it is a excuse for a code that no one without experience can understand, even if you dont have time to buldi all of your code, you just do what do you can code with your time, me as a developer, i cant take a project and develope without any concern or strategy.
