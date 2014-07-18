@@ -51,8 +51,8 @@ Agora uma pergunta importante, por que a minha classe Base está sendo herdada d
 Repare que na classe base recebemos um Object, porém nada impede de ser um Hash, Array, Model, Controller, ou o que você quiser. agora vamos tratar os nossos models:
 
 {% highlight ruby %}
+# /lib/mods/exceptions/model.rb
 class Exceptions::Model < Exceptions::Base
-  # /lib/mods/exceptions/model.rb
   # for model errors this method build a hash with all necessary information
   # @return [String] json string
   def error
